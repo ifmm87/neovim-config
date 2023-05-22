@@ -996,7 +996,8 @@ function M.setup()
         {
           "microsoft/vscode-js-debug",
           opt = true,
-          run = "npm install --legacy-peer-deps && npm run compile",
+          -- run = "npm install --legacy-peer-deps && npm run compile",
+          run = "npm install && npx gulp vsDebugServerBundle && mv dist out",
           disable = false,
         },
       },
