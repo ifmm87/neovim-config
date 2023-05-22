@@ -77,3 +77,4 @@ function M.get_winbar()
 end
 
 return M
+

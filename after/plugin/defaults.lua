@@ -1,8 +1,10 @@
 -- local api = vim.api
 local g = vim.g
 local opt = vim.opt
--- local cmd = vim.cmd
-
+local cmd = vim.cmd
+cmd("hi! Normal ctermbg=NONE guibg=NONE")
+cmd("hi! NonText ctermbg=NONE guibg=NONE")
+cmd("hi! EndOfBuffer ctermfg=NONE guibg=NONE")
 -- Remap leader and local leader to <Space>
 -- api.nvim_set_keymap("", "<Space>", "<Nop>", { noremap = true, silent = true })
 vim.keymap.set("", "<Space>", "<Nop>", { noremap = true, silent = true })
@@ -35,19 +37,19 @@ opt.expandtab = true
 opt.smarttab = true
 opt.textwidth = 0
 opt.autoindent = true
-opt.shiftwidth = 2
-opt.tabstop = 2
-opt.softtabstop = 2
+opt.shiftwidth = 4
+opt.tabstop = 4
+opt.softtabstop = 4
 opt.splitbelow = true
 opt.splitright = true
 opt.laststatus = 3 -- Global statusline
 opt.cmdheight = 1 -- 0
-opt.scrollback = 100000
 opt.splitkeep = "screen"
 opt.hidden = true
+opt.scrollback = 100000
 
 -- Change to use lualine.nvim
--- opt.winbar = "%{%v:lua.require'config.winbar'.get_winbar()%}"
+opt.winbar = "%{%v:lua.require'config.winbar'.get_winbar()%}"
 
 -- go to previous/next line with h,l,left arrow and right arrow when cursor reaches end/beginning of line
 opt.whichwrap:append "<>[]hl"
